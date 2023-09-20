@@ -56,7 +56,7 @@ else if (dice0ne == diceTwo || diceTwo == diceThree || dice0ne == diceThree)
 
 
 // =======  PRIZES =======
-        
+
 if (totalPoint >= 10 && totalPoint <= 13)
 {
     System.Console.WriteLine("Congratulations!!! (:)(\nYou get a balloon");
@@ -81,7 +81,7 @@ else if (totalPoint == LUCKYNUMBER)
 }
 else if (totalPoint >= 18 && totalPoint <= 20)
 {
-    System.Console.WriteLine("Congratulations!!! (:)(\nYou win a Sliver bird Ticket");
+    System.Console.WriteLine("Congratulations!!! (:)(\nYou win a Sliver bird Cinema Ticket");
 }
 
 // ====== You did not recieve any prize
