@@ -44,8 +44,6 @@ if (dice0ne == diceTwo && diceTwo == diceThree)
     totalPoint += TRIPLEPOINT;
     System.Console.WriteLine(totalPoint);
 }
-
-
 // Check to see if two die is equal 
 else if (dice0ne == diceTwo || diceTwo == diceThree || dice0ne == diceThree)
 {
@@ -53,27 +51,20 @@ else if (dice0ne == diceTwo || diceTwo == diceThree || dice0ne == diceThree)
     totalPoint += DOUBLEPOINT;
     System.Console.WriteLine(totalPoint);
 }
-
-
 // =======  PRIZES =======
-
 if (totalPoint >= 10 && totalPoint <= 13)
 {
-    System.Console.WriteLine("Congratulations!!! (:)(\nYou get a balloon");
+    System.Console.WriteLine("Congratulations!!! :)\nYou get a balloon");
     System.Console.WriteLine(totalPoint);
 }
-
 else if (totalPoint >= 14 && totalPoint <= 16)
 {
     System.Console.WriteLine("Congratulations!!! (:)(\nYou get an Exercise");
-
 }
-
 else if (totalPoint == 17)
 {
     System.Console.WriteLine("Congratulations!!! (:)(\nYou get a 5000mah power bank");
 }
-
 else if (totalPoint == LUCKYNUMBER)
 {
     System.Console.WriteLine("Congratulations!!!\nYou rolled the lucky number");
@@ -81,9 +72,13 @@ else if (totalPoint == LUCKYNUMBER)
 }
 else if (totalPoint >= 18 && totalPoint <= 20)
 {
-    System.Console.WriteLine("Congratulations!!! (:)(\nYou win a Sliver bird Cinema Ticket");
+    System.Console.WriteLine("Congratulations!!! :)\nYou win a Sliver bird Cinema Ticket");
 }
 
+else if (totalPoint >= 22 && totalPoint <= 24)
+{
+    System.Console.WriteLine("Congratulations!!! :)\nYou win all gifts");
+}
 // ====== You did not recieve any prize
 else
 {
