@@ -7,8 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.Runtime.Extensions" Version="4.0.10-beta-22816" />
-  </ItemGroup>
-
 </Project>
