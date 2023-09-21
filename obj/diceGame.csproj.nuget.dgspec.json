@@ -37,12 +37,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "System.Runtime.Extensions": {
-              "target": "Package",
-              "version": "[4.0.10-beta-22816, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
