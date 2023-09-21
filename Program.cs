@@ -1,4 +1,5 @@
 ﻿
+
 // See https://aka.ms/new-console-template for more information
 // 
 
@@ -15,82 +16,122 @@
 */
 
 
+
 const int DOUBLEPOINT = 2;
 const int TRIPLEPOINT = 6;
 int totalPoint;
-const int LUCKYNUMBER = 21;
+// const int LUCKYNUMBER = 21;
 Console.Write("====== Dice Game ======\ntype 'Start' or 'S' to roll the dice: ");
 string startRoll = Console.ReadLine()!;
 
-    
+
 while (!(startRoll.Equals("Start", StringComparison.OrdinalIgnoreCase) || startRoll.Equals("S", StringComparison.OrdinalIgnoreCase)))
 {
-        Console.WriteLine("Invalid Key provided");
-        Console.Write("====== Dice Game ======\ntype 'Start' or 'S' to roll the dice: ");
-         startRoll = Console.ReadLine()!;
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine("Invalid Key provided");
+    Console.ResetColor();
+    Console.Write("type 'Start' or 'S' to roll the dice: ");
+    startRoll = Console.ReadLine()!;
+}
+Console.Write("What is Your name: ");
+string name = Console.ReadLine()!;
+System.Console.WriteLine($"Welcome {name}");
+Console.Write("How many times do you want to run the code: ");
+int Choice = Convert.ToInt32(Console.ReadLine()!);
+
+while (!(Choice > 0))
+{
+    Console.Write("How many times do you want to run the code: ");
+    Choice = Convert.ToInt32(Console.ReadLine()!);
+}
+bool flag = true;
+
+while (flag && !(Choice < 1))
+{
+    Choice--;
+    Random random = new();
+    int dice0ne = random.Next(1, 7);
+    int diceTwo = random.Next(1, 7);
+    int diceThree = random.Next(1, 7);
+    totalPoint = dice0ne + diceTwo + diceThree;
+    Console.WriteLine($"Dice one {dice0ne} \tDice Two {diceTwo}\tDice Three {diceThree}");
+    // System.Console.WriteLine("======================");
+    // System.Console.WriteLine($"You have {Choice--} left");
+    // System.Console.WriteLine("======================");
+
+    // check to see if  three faces of a  die is equal
+    if (dice0ne == diceTwo && diceTwo == diceThree)
+    {
+        Console.WriteLine("You scored a bonus point of 6");
+        totalPoint += TRIPLEPOINT;
+        Console.WriteLine($"Total score: {totalPoint}");
     }
+    // Check to see if two die is equal 
+    else if (dice0ne == diceTwo || diceTwo == diceThree || dice0ne == diceThree)
+    {
+        Console.WriteLine("You scored a bonus point of 2");
+        totalPoint += DOUBLEPOINT;
+        Console.WriteLine($"Total score: {totalPoint}");
+    }
+    else
+    {
+        Console.WriteLine($"Total score: {totalPoint}");
 
-Random random = new();
-int dice0ne = random.Next(1, 7);
-int diceTwo = random.Next(1, 7);
-int diceThree = random.Next(1, 7);
-totalPoint = dice0ne + diceTwo + diceThree;
-Console.WriteLine($"Dice one {dice0ne} \t Dice Two {diceTwo}\tDice Three {diceThree}");
+    }
+    string message = (totalPoint >= 20 && totalPoint <= 24) ? "You won Congratulations" : "Sorry try again";
+    // =======  PRIZES =======
+    // if (totalPoint >= 10 && totalPoint <= 13)
+    // {
+    //     Console.WriteLine("Congratulations!!! :)\nYou get a balloon");
+    //     // System.Console.WriteLine($"Total score: {totalPoint}");
+    // }
+    // else if (totalPoint >= 14 && totalPoint <= 16)
+    // {
+    //     Console.WriteLine("Congratulations!!! :)\nYou get an Exercise book");
+    // }
+    // else if (totalPoint == 17)
+    // {
+    //     Console.WriteLine("Congratulations!!! :)\nYou get a 5000mah power bank");
+    // }
+    // else if (totalPoint == LUCKYNUMBER)
+    // {
+    //     Console.WriteLine("Congratulations!!!\nYou rolled the lucky number");
+    //     Console.WriteLine("You win a Samsung A24");
+    // }
+    // else if (totalPoint >= 18 && totalPoint <= 20)
+    // {
+    //     Console.WriteLine("Congratulations!!! :)\nYou win a Sliver bird Cinema Ticket");
+    // }
 
-// check to see if  three faces of a  die is equal
-if (dice0ne == diceTwo && diceTwo == diceThree)
-{
-    Console.WriteLine("You scored a bonus point of 6");
-    totalPoint += TRIPLEPOINT;
-    Console.WriteLine($"Total score: {totalPoint}");
-}
-// Check to see if two die is equal 
-else if (dice0ne == diceTwo || diceTwo == diceThree || dice0ne == diceThree)
-{
-    Console.WriteLine("You scored a bonus point of 2");
-    totalPoint += DOUBLEPOINT;
-    Console.WriteLine($"Total score: {totalPoint}");
-}
-else
-{
-    Console.WriteLine($"Total score: {totalPoint}");
+    // else if (totalPoint >= 22 && totalPoint <= 24)
+    // {
+    //     Console.WriteLine("Congratulations!!! :)\nYou win all gifts");
+    // }
+    // // ====== You did not recieve any prize
+    // else
+    // {
+    //     Console.WriteLine("Sorry try again");
+    // }
+    Console.WriteLine(message);
+    if (Choice < 1)
+    {
+        break;
+    }
+    string yes = "y";
+    string no = "n";
+    string userAction;
 
-}
+    do
+    {
+        System.Console.Write("Do you want to continue type y to continue and n to end: ");
+        userAction = Console.ReadLine()!;
+    } while (!userAction.Equals(yes, StringComparison.OrdinalIgnoreCase) && !userAction.Equals(no, StringComparison.OrdinalIgnoreCase));
 
-// =======  PRIZES =======
-if (totalPoint >= 10 && totalPoint <= 13)
-{
-    Console.WriteLine("Congratulations!!! :)\nYou get a balloon");
-    // System.Console.WriteLine($"Total score: {totalPoint}");
+    if (userAction != yes)
+    {
+        flag = false;
+    }
 }
-else if (totalPoint >= 14 && totalPoint <= 16)
-{
-    Console.WriteLine("Congratulations!!! (:)(\nYou get an Exercise");
-}
-else if (totalPoint == 17)
-{
-    Console.WriteLine("Congratulations!!! (:)(\nYou get a 5000mah power bank");
-}
-else if (totalPoint == LUCKYNUMBER)
-{
-    Console.WriteLine("Congratulations!!!\nYou rolled the lucky number");
-    Console.WriteLine("You win a Samsung A24");
-}
-else if (totalPoint >= 18 && totalPoint <= 20)
-{
-    Console.WriteLine("Congratulations!!! :)\nYou win a Sliver bird Cinema Ticket");
-}
-
-else if (totalPoint >= 22 && totalPoint <= 24)
-{
-    Console.WriteLine("Congratulations!!! :)\nYou win all gifts");
-}
-// ====== You did not recieve any prize
-else
-{
-    Console.WriteLine("Sorry try again");
-}
-
 
 
 
@@ -174,7 +215,7 @@ else
 //         System.Console.WriteLine("Sorry try again");
 //     }
 //     System.Console.Write("Do you want to play again type 1 to continue or 2 to end: ");
-    
+
 //     int userChoice = int.Parse(Console.ReadLine()!);
 
 //     if (userChoice == 1)
@@ -186,5 +227,5 @@ else
 //         System.Console.WriteLine("Exited Successfully");
 //         condition = false;
 //     }
-    
+
 //     }
