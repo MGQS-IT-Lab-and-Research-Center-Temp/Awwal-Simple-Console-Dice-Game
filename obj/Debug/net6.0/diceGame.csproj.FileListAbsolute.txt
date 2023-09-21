@@ -3,7 +3,6 @@
 /home/awwal/Desktop/C#_Projects/diceGame/bin/Debug/net6.0/diceGame.runtimeconfig.json
 /home/awwal/Desktop/C#_Projects/diceGame/bin/Debug/net6.0/diceGame.dll
 /home/awwal/Desktop/C#_Projects/diceGame/bin/Debug/net6.0/diceGame.pdb
-/home/awwal/Desktop/C#_Projects/diceGame/obj/Debug/net6.0/diceGame.csproj.AssemblyReference.cache
 /home/awwal/Desktop/C#_Projects/diceGame/obj/Debug/net6.0/diceGame.GeneratedMSBuildEditorConfig.editorconfig
 /home/awwal/Desktop/C#_Projects/diceGame/obj/Debug/net6.0/diceGame.AssemblyInfoInputs.cache
 /home/awwal/Desktop/C#_Projects/diceGame/obj/Debug/net6.0/diceGame.AssemblyInfo.cs
